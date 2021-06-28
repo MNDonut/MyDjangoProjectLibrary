@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <title>Register</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Registration form</h1><br>
+        <!-- method = "POST" and button type = "submit" sends data to the same view -->
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="block-field">
+                    {{ field }}
+                    {% for error in field.errors %}
+                    <br><br>
+                    <p style="color: crimson" class="error-message">{{ error }}</p>
+                    {% endfor %}
+                </div><br>
+            {% endfor %}
+            <button type="submit">Register</button>
+        </form>
+        <br>
+        <p>Have an account? <a href="{% url 'login' %}">Log in</a></p>
+    </div>
+</body>
+</html>

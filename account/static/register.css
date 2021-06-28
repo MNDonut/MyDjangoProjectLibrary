@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-image: url("/static/register-login-wallpaper.jpg");
+    display: flex;
+    justify-content: center;
+    margin: 4em 0;
+}
+
+h1 {
+    font: 3em 'Rubik', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    width: 95%;
+    padding: 0.3em 0.5em;
+    font: 1em 'Rubik', sans-serif;
+    background: #d8d8d8;
+}
+
+p {
+    font: 1em 'Rubik', sans-serif;
+}
+
+button {
+    font: 1.5em 'Rubik', sans-serif;
+    background: rgb(69, 211, 44);
+    color: white;
+    padding: 2%;
+    width: 99%;
+    cursor: pointer;
+}
+
+.wrapper {
+    width: fit-content;
+    text-align: center;
+    padding: 20px 30px;
+    background: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
