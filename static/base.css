@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    padding-left: 5%;
+    color: white;
+    font-size: 1.3em;
+}
+
+.menu {
+    background: rgb(68, 207, 200);
+    font: 1.5em 'Rubik', sans-serif;
+    color: white;
+    height: 2em;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.menu-list, .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-list {
+    justify-content: flex-end;
+}
+
+.menu-item {
+    color: rgb(255, 255, 255);
+    margin: 0 2%;
+}

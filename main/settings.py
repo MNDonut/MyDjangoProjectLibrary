@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -105,9 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # show Django where is overloading of 'authenticate' method
 AUTHENTICATION_BACKENDS = ['account.forms.EmailBackend']
 # set redirect url name(or link) after login
-LOGIN_REDIRECT_URL = "account"
+LOGIN_REDIRECT_URL = "home"
 # if user isn't logged it'll redirect to 'login' url and then to previous page
 LOGIN_URL = "login"
+
+LOGOUT_REDIRECT_URL = "home"
 
 
 # Internationalization
@@ -128,7 +131,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+# if i wanna have a folder with common css files
+# else STATIC_ROOT = BASE_DiR / 'static'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
