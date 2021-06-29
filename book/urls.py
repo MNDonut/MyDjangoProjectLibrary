@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.listOfBooks, name='list'),
-    path('book/<int:id>', views.getBookById, name='getBookById')
+    path('book/<slug:slug>/', views.getBookByName, name='getBookByName'),
+    path('category/<str:category>/', views.getBooksByCategory, name='getBooksByCategory'),
 ]

@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% for key, val in context.items %}
+    <br>
+    <h2><a href="{% url 'getBooksByCategory' key %}">{{ key|title }}</a></h2>
+    <br>
+    <div class="random-books">
+        {% for book in val %}
+            <div class="book">
+                <a href="{% url 'getBookByName' book.slug %}"><img src="{{ book.image.url }}"></a>
+                <a class="book-name" href="{% url 'getBookByName' book.slug %}">
+                    {% if book.title|length > 14 %}
+                        {{ book.title|slice:"14" }}..
+                    {% else %}
+                        {{ book.title|slice:"17" }}
+                    {% endif %}
+                </a><br>
+                <a href="{% url 'getBookByName' book.slug %}"><p class="details">Details</p></a>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+{% endblock %}

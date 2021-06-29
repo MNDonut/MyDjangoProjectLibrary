@@ -1,0 +1,32 @@
+h2 a{
+    font: 1.5em 'Rubik', sans-serif;
+    color: black;
+}
+
+.random-books {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.book {
+    text-align: center;
+}
+
+.book-name {
+    font: 1.5em 'Rubik', sans-serif;
+    color: salmon;
+    word-break: break-all;
+}
+
+.book img {
+    width: 200px;
+    height: 300px;
+}
+
+.details {
+    color: white;
+    background: rgb(136, 226, 0);
+    font: 1.4em 'Rubik', sans-serif;
+    margin: 0 2%;
+    padding: 2%;
+}
