@@ -4,7 +4,8 @@ from .models import Book
 from .filters import BookFilter
 
 def listOfBooks(request):
-    pass
+    books = Book.objects.all()
+    return render(request, 'all_books.html', {'books': books})
 
 def getBookByName(request, slug):
     return HttpResponse('by-slug')

@@ -1,0 +1,15 @@
+li {
+    text-align: center;
+    list-style: none;
+}
+
+img {
+    width: 200px;
+    height: 300px;
+}
+
+.books {
+    padding: 3% 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
