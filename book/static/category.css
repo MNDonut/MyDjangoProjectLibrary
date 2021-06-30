@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    font: 3em 'Rubik', sans-serif;
+}
+
+li {
+    text-align: center;
+    list-style: none;
+}
+
+img {
+    width: 200px;
+    height: 300px;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}

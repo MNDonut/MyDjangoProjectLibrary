@@ -30,3 +30,15 @@ h2 a{
     margin: 0 2%;
     padding: 2%;
 }
+
+.genre {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+.genre:hover {
+    background-size: 100% 2px;
+}

@@ -6,7 +6,7 @@
 
 {% for key, val in context.items %}
     <br>
-    <h2><a href="{% url 'getBooksByCategory' key %}">{{ key|title }}</a></h2>
+    <h2><a class="genre" href="{% url 'getBooksByCategory' key %}">{{ key|title }}</a></h2>
     <br>
     <div class="random-books">
         {% for book in val %}

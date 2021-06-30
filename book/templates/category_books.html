@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title %}{{ category|title }} books{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'category.css' %}">
+<br>
+<h1>{{ category|title }} books</h1>
+<br>
+<ul class="books">
+{% for book in allBooks %}
+    <li class="genre-book">
+        <a href="{% url 'getBookByName' book.slug %}"><img src="{{ book.image.url }}"></a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
