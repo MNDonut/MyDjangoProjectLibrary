@@ -53,3 +53,8 @@ p input, p select {
     padding: 2%;
 }
 
+.not-exist {
+    text-align: center;
+    font: 2em 'Rubik', sans-serif;
+}
+

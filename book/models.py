@@ -23,7 +23,7 @@ class Book(models.Model):
     # many books has one genre, if genre is deleted then delete related books
     genre = models.ForeignKey('Genre', on_delete=CASCADE)
     price = models.DecimalField(validators=[isBiggerThanZero], max_digits=6, decimal_places=2)
-    slug = AutoSlugField(populate_from='title')
+    slug = AutoSlugField(populate_from='title', default='')
 
     def __str__(self):
         return self.title

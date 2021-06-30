@@ -4,14 +4,26 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'category.css' %}">
+<form class="filter-form" method="get">
+    {% for field in filter.form %}
+        <div class="filter-form-field">
+            <p class="filter-label">{{ field.label }}</p>
+            <p class="filter-field">{{ field }}</p>
+        </div>
+    {% endfor %}
+    <button class= "sort-button" type="submit">Sort</button>
+</form>
 <br>
 <h1>{{ category|title }} books</h1>
 <br>
 <ul class="books">
-{% for book in allBooks %}
-    <li class="genre-book">
-        <a href="{% url 'getBookByName' book.slug %}"><img src="{{ book.image.url }}"></a>
-    </li>
-{% endfor %}
+    {% for book in filter.qs %}
+        <li class="genre-book">
+            <a href="{% url 'getBookByName' book.slug %}"><img src="{{ book.image.url }}"></a>
+        </li>
+    {% endfor %}
 </ul>
+{% if not filter.qs.exists %}
+<h1 class="not-exist" style="color: crimson">There is no any book :(</h1>
+{% endif %}
 {% endblock %}

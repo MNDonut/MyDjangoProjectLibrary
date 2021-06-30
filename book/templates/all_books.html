@@ -21,4 +21,7 @@
     </li>
 {% endfor %}
 </ul>
+{% if not filter.qs.exists %}
+<h1 class="not-exist" style="color: crimson">There is no any book :(</h1>
+{% endif %}
 {% endblock %}
