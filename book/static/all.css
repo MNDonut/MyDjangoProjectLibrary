@@ -13,3 +13,43 @@ img {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+
+.filter-form {
+    padding: 3% 0 0 0;
+    display: grid;
+    text-align: center;
+    grid-row-gap: 1em;
+    grid-template-areas: ". . ."
+                         ". . ."
+                         ". b .";
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-form .filter-label {
+    text-align: center;
+}
+
+.filter-label {
+    font: 1.5em 'Rubik', sans-serif;
+}
+
+.sort-button {
+    font: 1.5em 'Rubik', sans-serif;
+}
+
+.sort-button {
+    padding: 2% 0;
+    width: 80%;
+    grid-area: b;
+    background: rgb(57, 214, 29);
+    color:white;
+    border: 0;
+    cursor: pointer;
+    margin-left: 10%;
+}
+
+p input, p select {
+    width: 75%;
+    padding: 2%;
+}
+

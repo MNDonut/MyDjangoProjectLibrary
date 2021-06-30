@@ -29,7 +29,7 @@ class Book(models.Model):
         return self.title
 
 class Genre(models.Model):
-    genre = models.CharField(max_length=32)
+    genre = models.CharField(max_length=32, default='')
 
     def __str__(self):
         return self.genre
