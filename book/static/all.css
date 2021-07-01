@@ -67,7 +67,6 @@ p input, p select {
 
 .book-price {
     font: 1em 'Rubik', sans-serif;
-    font-weight: bold;
     text-align: left;
     color: seagreen;
     padding: 0 0 0 5%;
@@ -80,6 +79,5 @@ p input, p select {
     margin: 0 3%;
     padding: 8% 0;
     font: 1em 'Rubik', sans-serif;
-    font-weight: bold;
 }
 

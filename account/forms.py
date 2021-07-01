@@ -31,7 +31,7 @@ class CustomLoginForm(AuthenticationForm):
     username = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
-# overloading authentication for using email as a default field
+# overloading authentication for using email as a default field(instead of username)
 class EmailBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         UserModel = get_user_model()

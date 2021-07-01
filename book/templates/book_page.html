@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block title %}book.title{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'book_page.css' %}">
+<div class="book">
+    <div class="book-picture">
+        <img class="aa" src="{{ book.image.url }}" alt="">
+        <div class="buttons">
+            <a class="save-button" href="#">Save</a>
+            <a class="buy-button" href="#">Buy</a>  
+        </div>
+    </div>
+    <div class="book-info">
+        <h1>{{ book.title }}</h1><br>
+        <p class="maintext">Price: <span class="book-price">{{ book.price}}</span>&#8372;</p><br>
+        <p class="maintext">Language: <span class="book-language">{{ book.language }}</span></p><br>
+        <p class="maintext">Genre: <span class="book-genre">{{ book.genre|title }}</span></p><br>
+        <p class="maintext">About this book: <span class="book-description">{{ book.description }}</span></p>
+    </div>
+</div>
+{% endblock %}

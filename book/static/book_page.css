@@ -1,0 +1,63 @@
+.book, .book-picture, .buttons {
+    display: grid;
+}
+
+.book {
+    padding: 2% 0 0 0;
+    grid-column-gap: 2em;
+    grid-template-columns: 1fr 2fr;
+}
+
+.book-picture {
+    grid-template-rows: 3fr 1fr;
+    grid-row-gap: 1em;
+}
+
+.book-info {
+    font: 1.5em 'Rubik', sans-serif;
+}
+
+.book-price, .book-language, .book-genre, .book-description {
+    font: 1em 'Rubik', sans-serif;
+}
+
+.book-price {
+    color: seagreen;
+}
+
+.book-language {
+    color: coral;
+}
+
+.book-genre {
+    color: coral;
+}
+
+.book-info p {
+    text-align: left;
+}
+
+img.aa {
+    width: 100%;
+    height: auto;
+}
+
+.buttons {
+    align-items: center;
+    grid-row-gap: 1em;
+    grid-template-rows: 1fr 1fr;
+}
+
+.save-button {
+    background: rgb(22, 206, 22);
+}
+
+.buy-button {
+    background: crimson;
+}
+
+.save-button , .buy-button {
+    color: white;
+    padding: 5% 0;
+    font: 2em 'Rubik', sans-serif;
+}

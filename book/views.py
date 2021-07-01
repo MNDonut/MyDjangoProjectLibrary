@@ -1,5 +1,5 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Book
 from .filters import BookFilter, BookFilterWithoutGenre
 
@@ -9,7 +9,8 @@ def listOfBooks(request):
     return render(request, 'all_books.html', {'books': books, 'filter': filter})
 
 def getBookByName(request, slug):
-    return HttpResponse('by-slug')
+    book = Book.objects.get(slug=slug)
+    return render(request, 'book_page.html', {'book': book})
 
 def getBooksByCategory(request, category):
     # genre__genre - class__field
