@@ -11,6 +11,7 @@ img {
 .books {
     padding: 3% 0 0 0;
     display: grid;
+    grid-row-gap: 1em;
     grid-template-columns: repeat(5, 1fr);
 }
 
@@ -56,5 +57,29 @@ p input, p select {
 .not-exist {
     text-align: center;
     font: 2em 'Rubik', sans-serif;
+}
+
+.book-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.book-price {
+    font: 1em 'Rubik', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: seagreen;
+    padding: 0 0 0 5%;
+}
+
+.buy-book {
+    background-color: crimson;
+    cursor: pointer;
+    color: white;
+    margin: 0 3%;
+    padding: 8% 0;
+    font: 1em 'Rubik', sans-serif;
+    font-weight: bold;
 }
 

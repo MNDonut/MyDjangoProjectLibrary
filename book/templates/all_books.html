@@ -18,6 +18,10 @@
 {% for book in filter.qs %}
     <li class="all-book">
         <a href="{% url 'getBookByName' book.slug %}"><img src="{{ book.image.url }}"></a>
+        <div class="book-info">
+            <span class="book-price">Price: {{ book.price }}&#8372;</span>
+            <a class="buy-book"href="#">Buy</a>
+        </div>
     </li>
 {% endfor %}
 </ul>
