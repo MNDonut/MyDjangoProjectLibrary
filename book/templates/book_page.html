@@ -1,15 +1,21 @@
 {% extends 'common/base.html' %}
 {% load static %}
-{% block title %}book.title{% endblock %}
+{% block title %}{{ book.title }}{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'book_page.css' %}">
 <div class="book">
     <div class="book-picture">
-        <img class="aa" src="{{ book.image.url }}" alt="">
+        <img class="bookimg" src="{{ book.image.url }}" alt="">
         <div class="buttons">
-            <a class="save-button" href="#">Save</a>
             <a class="buy-button" href="#">Buy</a>  
+            <a class="save-button" href="{% url 'add_or_remove' book.id%}">
+                {% if saved %}
+                    <i class="fas fa-bookmark"></i>
+                {% else %}
+                    <i class="far fa-bookmark"></i>
+                {% endif %}
+            </a>
         </div>
     </div>
     <div class="book-info">

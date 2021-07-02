@@ -1,0 +1,9 @@
+{% extends 'common/base.html' %}
+
+{% block title %}Favorite{% endblock %}
+
+{% block content %}
+{% for favorite_book in list %}
+    <p>{{ favorite_book }}</p>
+{% endfor %}
+{% endblock %}

@@ -2,6 +2,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Book
 from .filters import BookFilter, BookFilterWithoutGenre
+from bookmark.models import Mark
 
 def listOfBooks(request):
     books = Book.objects.all()
@@ -9,8 +10,17 @@ def listOfBooks(request):
     return render(request, 'all_books.html', {'books': books, 'filter': filter})
 
 def getBookByName(request, slug):
+    # render book page
+    # also check is current book marked and change bookmark button
+    currentBook = Book.objects.get(slug=slug)
+    isItMarkedBook = Mark.objects.filter(user=request.user, book=currentBook)
     book = Book.objects.get(slug=slug)
-    return render(request, 'book_page.html', {'book': book})
+    if isItMarkedBook:
+        saved = True
+        return render(request, 'book_page.html', {'book': book, 'saved': saved})
+    saved = False
+    return render(request, 'book_page.html', {'book': book, 'saved': saved})
+        
 
 def getBooksByCategory(request, category):
     # genre__genre - class__field
