@@ -1,0 +1,47 @@
+a {
+    color: slateblue;
+}
+
+.table {
+    border: 2px solid coral;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    font: 1.5em 'Rubik', sans-serif;
+    background: steelblue;
+    color: white;
+}
+
+.book {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    font: 1.5em 'Rubik', sans-serif;
+    margin: 2% 0;
+}
+
+.book img {
+    width: 100px;
+    height: auto;
+}
+
+.book a {
+    display: flex;
+    justify-self: center;
+}
+
+.book a img {
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.book-price {
+    color: seagreen;
+}
+
+.book-genre {
+    color: coral;
+}

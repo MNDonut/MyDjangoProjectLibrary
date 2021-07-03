@@ -1,9 +1,25 @@
 {% extends 'common/base.html' %}
-
+{% load static %}
 {% block title %}Favorite{% endblock %}
 
 {% block content %}
-{% for favorite_book in list %}
-    <p>{{ favorite_book }}</p>
-{% endfor %}
+<link rel="stylesheet" href="{% static 'favorite.css' %}">
+<div class="table">
+    <div class="columns">
+        <p>Image</p>
+        <p>Title</p>
+        <p>Genre</p>
+        <p>Language</p>
+        <p>Price</p>
+    </div>
+    {% for favorite_book in list %}
+        <div class="book">
+            <a href="{% url 'getBookByName' favorite_book.book.slug %}"><img src="{{ favorite_book.book.image.url }}" alt=""></a>
+            <a href="{% url 'getBookByName' favorite_book.book.slug %}">{{ favorite_book.book.title }}</a>
+            <a href="{% url 'getBooksByCategory' favorite_book.book.genre %}" class="book-genre">{{ favorite_book.book.genre|title }}</a>
+            <p>{{ favorite_book.book.language|title }}</p>
+            <p class="book-price">{{ favorite_book.book.price }}₴</p>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
