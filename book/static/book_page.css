@@ -47,6 +47,10 @@ img.bookimg {
     grid-column-gap: 1em;
 }
 
+.buttons-anonymous {
+    grid-template-columns: 1fr;
+}
+
 .save-button {
     background: rgb(22, 206, 22);
 }

@@ -13,11 +13,13 @@ def getBookByName(request, slug):
     # render book page
     # also check is current book marked and change bookmark button
     currentBook = Book.objects.get(slug=slug)
-    isItMarkedBook = Mark.objects.filter(user=request.user, book=currentBook)
     book = Book.objects.get(slug=slug)
-    if isItMarkedBook:
-        saved = True
-        return render(request, 'book_page.html', {'book': book, 'saved': saved})
+    # i don't allow users to save books if they aren't authenticated
+    if request.user.is_authenticated:
+        isItMarkedBook = Mark.objects.filter(user=request.user, book=currentBook)
+        if isItMarkedBook:
+            saved = True
+            return render(request, 'book_page.html', {'book': book, 'saved': saved})
     saved = False
     return render(request, 'book_page.html', {'book': book, 'saved': saved})
         

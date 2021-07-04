@@ -21,7 +21,9 @@ a {
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     font: 1.5em 'Rubik', sans-serif;
-    margin: 2% 0;
+    margin: 2% 0 0;
+    border-top: 2px solid coral;
+    border-bottom: 2px solid coral;
 }
 
 .book img {
@@ -44,4 +46,18 @@ a {
 
 .book-genre {
     color: coral;
+}
+
+.total {
+    text-align: center;
+    color: seagreen;
+    display: grid;
+    font: 1.5em 'Rubik', sans-serif;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: ". . . . total-price";
+}
+
+.total-price {
+    grid-area: total-price;
+    border-left: 2px solid coral;
 }

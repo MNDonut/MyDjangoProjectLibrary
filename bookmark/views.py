@@ -5,7 +5,8 @@ from django.http import HttpResponseRedirect
 
 def favorite(request):
     marks = Mark.objects.filter(user__email=request.user.email)
-    return render(request, 'favorite.html', {'list': marks})
+    total = sum(list(x.book.price for x in marks))
+    return render(request, 'favorite.html', {'list': marks, 'total': total})
 
 def add(request, id):
     book = Book.objects.get(pk=id)
