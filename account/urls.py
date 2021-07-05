@@ -5,7 +5,6 @@ from .forms import CustomLoginForm
 # using built-in django login & logout views
 urlpatterns = [
     path('', views.home, name='home'),
-    path('account/', views.account, name='account'),
     path('register/', views.register, name='register'),
     path('logout/', auth_view.LogoutView.as_view(template_name='logout.html'), name='logout'),
     # using custom form for adding placeholders

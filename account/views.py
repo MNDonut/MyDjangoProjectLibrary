@@ -12,12 +12,6 @@ def home(request):
         booksToShow[genre] = randomBooksInThisGenre
     return render(request, 'common/home.html', {'context': booksToShow})
 
-# if user'll try to open own account it'll redirect to login page firstly
-@login_required
-def account(request):
-    user = User.objects.get(username=request.user.username)
-    return render(request, 'account_page.html', {'currentUser': user})
-
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

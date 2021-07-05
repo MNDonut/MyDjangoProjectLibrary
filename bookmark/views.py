@@ -2,7 +2,9 @@ from django.shortcuts import redirect, render
 from .models import Mark
 from book.models import Book
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def favorite(request):
     marks = Mark.objects.filter(user__email=request.user.email)
     total = sum(list(x.book.price for x in marks))
